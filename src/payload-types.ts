@@ -14,7 +14,11 @@ export interface Config {
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
-  globals: {};
+  globals: {
+    contact: Contact;
+    about: About;
+    selector: Selector;
+  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -103,6 +107,69 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
+  id: string;
+  firstAgency: {
+    label: string;
+    email: string;
+  };
+  secondAgency: {
+    label: string;
+    tagline: string;
+    email: string;
+    phone: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "about".
+ */
+export interface About {
+  id: string;
+  portrait: string | Media;
+  content?:
+    | {
+        paragraph: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "selector".
+ */
+export interface Selector {
+  id: string;
+  heading: string;
+  creative: {
+    heading: string;
+    images?:
+      | {
+          image: string | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  commerical: {
+    heading: string;
+    images?:
+      | {
+          image: string | Media;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 
 

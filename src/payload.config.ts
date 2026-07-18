@@ -8,6 +8,9 @@ import { buildConfig } from "payload/config";
 import Users from "./collections/Users";
 import Media from "./collections/Media";
 import { Projects } from "./collections/Projects";
+import { Selector } from "./globals/Selector";
+import { About } from "./globals/About";
+import { Contact } from "./globals/Contact";
 
 export default buildConfig({
   admin: {
@@ -16,7 +19,7 @@ export default buildConfig({
   },
   editor: slateEditor({}),
   collections: [Users, Media, Projects],
-  globals: [],
+  globals: [Contact, About, Selector],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
