@@ -61,6 +61,7 @@ export interface Media {
  */
 export interface Project {
   id: string;
+  order?: number | null;
   cate: 'creative' | 'commercial';
   heroMedia: string | Media;
   name: string;

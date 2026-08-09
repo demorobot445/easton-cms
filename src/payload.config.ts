@@ -11,11 +11,22 @@ import { Projects } from "./collections/Projects";
 import { Selector } from "./globals/Selector";
 import { About } from "./globals/About";
 import { Contact } from "./globals/Contact";
+import ProjectsReorderList from "./admin/components/ProjectsReorderList";
+import ReorderNavLink from "./admin/components/ReorderNavLink";
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
+    components: {
+      views: {
+        ProjectsReorder: {
+          Component: ProjectsReorderList,
+          path: "/projects-reorder",
+        },
+      },
+      afterNavLinks: [ReorderNavLink],
+    },
   },
   editor: slateEditor({}),
   collections: [Users, Media, Projects],
