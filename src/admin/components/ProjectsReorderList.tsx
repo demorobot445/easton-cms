@@ -51,9 +51,7 @@ const ProjectsReorderList: React.FC = () => {
 
         const res = await fetch(
           `${serverURL}${routes.api}/projects?sort=order&limit=1000&depth=0`,
-          {
-            credentials: "include",
-          },
+          { credentials: "include" },
         );
 
         const data = await res.json();
@@ -84,12 +82,8 @@ const ProjectsReorderList: React.FC = () => {
       await fetch(`${serverURL}${routes.api}/projects/reorder`, {
         method: "POST",
         credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          orderedIds: reordered.map((p) => p.id),
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderedIds: reordered.map((p: any) => p.id) }),
       });
     } finally {
       setSaving(false);
@@ -125,11 +119,14 @@ const ProjectsReorderList: React.FC = () => {
             <SortableContext
               items={projects.map((p) => p.id)}
               strategy={verticalListSortingStrategy}
-            >
-              {projects.map((p) => (
-                <Row key={p.id} project={p} />
-              ))}
-            </SortableContext>
+              children={
+                <>
+                  {projects.map((p) => (
+                    <Row key={p.id} project={p} />
+                  ))}
+                </>
+              }
+            ></SortableContext>
           </DndContext>
         )}
       </div>
