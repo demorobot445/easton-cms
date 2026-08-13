@@ -71,6 +71,7 @@ export const Projects: CollectionConfig = {
       name: "cate",
       type: "select",
       required: true,
+      defaultValue: "creative",
       options: [
         {
           label: "Creative",
@@ -79,6 +80,63 @@ export const Projects: CollectionConfig = {
         {
           label: "Commercial",
           value: "commercial",
+        },
+      ],
+    },
+
+    {
+      name: "subCate",
+      type: "select",
+      required: true,
+      defaultValue: "commercial",
+      options: [
+        {
+          label: "Fashion",
+          value: "fashion",
+        },
+        {
+          label: "Commercial",
+          value: "commercial",
+        },
+        {
+          label: "Product",
+          value: "product",
+        },
+        {
+          label: "Beauty",
+          value: "beauty",
+        },
+        {
+          label: "Food",
+          value: "food",
+        },
+        {
+          label: "Beverage",
+          value: "beverage",
+        },
+        {
+          label: "Celebrity",
+          value: "celebrity",
+        },
+        {
+          label: "Portraiture",
+          value: "portraiture",
+        },
+        {
+          label: "Lifestyle",
+          value: "lifestyle",
+        },
+        {
+          label: "Personal",
+          value: "personal",
+        },
+        {
+          label: "Active",
+          value: "active",
+        },
+        {
+          label: "Video",
+          value: "video",
         },
       ],
     },
