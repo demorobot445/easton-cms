@@ -95,6 +95,18 @@ export const Projects: CollectionConfig = {
       required: true,
     },
     {
+      name: "additionalHeroMedia",
+      type: "array",
+      fields: [
+        {
+          name: "media",
+          type: "upload",
+          relationTo: "media",
+          required: true,
+        },
+      ],
+    },
+    {
       name: "name",
       type: "text",
       required: true,
