@@ -22,8 +22,7 @@ export const Selector: GlobalConfig = {
         {
           name: "images",
           type: "array",
-          minRows: 5,
-          maxRows: 5,
+          minRows: 2,
           fields: [
             {
               name: "image",
@@ -47,8 +46,7 @@ export const Selector: GlobalConfig = {
         {
           name: "images",
           type: "array",
-          minRows: 5,
-          maxRows: 5,
+          minRows: 2,
           fields: [
             {
               name: "image",
